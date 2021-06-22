@@ -6,18 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  ultimoId = 0;
-  nome = '';
-  adicionado= false;
-  funcionarios :any[] = [];
+ funcionarios : any[] = [];
 
-  adicionar(){
-    this.adicionado = true;
-    this.funcionarios.push({
-      id: ++this.ultimoId,
-      nome: this.nome
-    });
-  }
-
+aoAdicionar(funcionario: any){
+  this.funcionarios.push(funcionario);
+}
  
 }

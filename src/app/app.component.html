@@ -1,17 +1,5 @@
 <div class="container">
-    <div class="alert alert-success" role="alert" 
-     *ngIf="adicionado">
-        Funcionario {{nome}} adicionado com sucesso
-    </div>
-    
-    <div class="input-group">
-        <label>Nome </label> 
-        <input type="text" class="form-control" [(ngModel)]="nome"
-         (focus)="adicionado = false">
-    </div>
-
-    <button type="button" class="btn btn-primary" [disabled]="nome.length == 0" (click)="adicionar()">Adicionar</button>
-
+    <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
 
     <div class="row" style="margin-top: 20px;">
         <div class="col-3" *ngFor="let func of funcionarios">
